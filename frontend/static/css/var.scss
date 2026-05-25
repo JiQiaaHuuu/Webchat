@@ -1,8 +1,10 @@
 // some color
+// F：统一主题色（蓝白风格）
 // @import './theme.scss';
+
 $primarycolor: #409EFF;
-// $primarycolor: var(--theme-primary);
-$primarycolor-1: #3578E5;
+$primarycolor-1: #337ECC;
+
 $successcolor: #67C23A;
 $warningcolor: #E6A23C;
 $dangercolor: #F56C6C;
@@ -10,27 +12,27 @@ $infocolor: #909399;
 
 $normalwhite: #ffffff;
 
-// some font color
-$primaryfont: var(--primary-color-10);
-$normalfont: var(--primary-color-8);
-$secondaryfont: var(--primary-color-6);
-$seatfont: var(--primary-color-4);
+// 字体颜色（统一）
+$primaryfont: #303133;
+$normalfont: #606266;
+$secondaryfont: #909399;
+$seatfont: #C0C4CC;
 
-// bgcolor
-$primarybg: var(--primary-bgcolor-10);
-$normalbg: var(--primary-bgcolor-8);
-$secondarybg: var(--primary-bgcolor-6);
-$seatbg: var(--primary-bgcolor-4);
+// 背景颜色（统一）
+$primarybg: #ffffff;
+$normalbg: #F5F7FA;
+$secondarybg: #EBEEF5;
+$seatbg: #F2F6FC;
 
-// border
+// 边框颜色
 $border1: #DCDFE6;
 $border2: #E4E7ED;
 $border3: #EBEEF5;
 $border4: #F2F6FC;
 
-// box-shadow
+// 通用阴影
 .basics-box-shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, .08);
 }
 
 $color-purple: hsla(230, 84%, 63%, 1);
