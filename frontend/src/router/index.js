@@ -67,14 +67,15 @@ const router = new Router({
             requiresAuth: true
           },
         },
-        {
-          path: 'schedule',
-          name: 'Schedule',
-          component: () => import('@/views/Schedule'),
-          meta: {
-            requiresAuth: true
-          },
-        },
+        // 去掉日程入口
+        // {
+        //   path: 'schedule',
+        //   name: 'Schedule',
+        //   component: () => import('@/views/Schedule'),
+        //   meta: {
+        //     requiresAuth: true
+        //   },
+        // },
       ]
     },
     {

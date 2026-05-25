@@ -1,14 +1,21 @@
 <template>
+  <!-- 移除日程入口 -->
+  <!--
   <div class="todo-cmp" @click="goSchedule" title="前往日程">
     <i class="el-icon-circle-check" style="fontSize: 20px"></i>
     <span class="text">今日待办 <span class="">:</span> {{todos.length}}</span>
   </div>
+  -->
 </template>
 
 <script>
+  // 移除日程功能
+  /*
   import {fromatTime} from '@/utils'
+  */
 
   export default {
+    /*
     data() {
       return {
         todos: []
@@ -28,19 +35,24 @@
               return item
             }
           } else if (new Date(item.end) > new Date(item.start)) {
-            if (fromatTime(new Date(item.start), false) <= fromatTime(new Date(), false) && fromatTime(new Date(item.end), false) >= fromatTime(new Date(), false)) {
+            if (
+              fromatTime(new Date(item.start), false) <= fromatTime(new Date(), false)
+              && fromatTime(new Date(item.end), false) >= fromatTime(new Date(), false)
+            ) {
               item.start = fromatTime(new Date(item.start), false)
               item.end = fromatTime(new Date(item.end), false)
               return item
             }
           }
         }).filter(item => item)
+
         this.todos = todayTodos
       }
     },
     mounted() {
       this.findTodayTodo()
     },
+    */
   }
 </script>
 
@@ -52,7 +64,6 @@
     align-items: center;
     height: 40px;
     background-color: $secondarybg;
-    // background-color: #fff;
     padding: 5px;
     border-radius: 5px;
     color: $primaryfont;

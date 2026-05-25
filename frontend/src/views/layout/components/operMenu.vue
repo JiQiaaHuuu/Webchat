@@ -21,9 +21,10 @@
             </router-link>
           </el-badge>
         </el-dropdown-item>
-        <el-dropdown-item>
+        <!-- 删除主题设置 -->
+        <!-- <el-dropdown-item>
           <el-button type="text" @click="setShowTheme(true)">主题设置</el-button>
-        </el-dropdown-item>
+        </el-dropdown-item> -->
         <el-dropdown-item>
           <el-button type="text" @click="showFeedBackDialog">反馈</el-button>
           <!--          <router-link to="/chat/feedback" class="aside-menu-link">-->

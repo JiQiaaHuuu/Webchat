@@ -69,7 +69,7 @@
         return res
       },
       ...mapState('app', {
-        isToCoArtBoard: 'isToCoArtBoard',
+        //isToCoArtBoard: 'isToCoArtBoard',
         isVideoing: 'isVideoing',
         isAudioing: 'isAudioing'
       }),
@@ -78,11 +78,11 @@
       }
     },
     methods: {
-      enterArtBoard() {
-        if (this.isToCoArtBoard || this.isVideoing || this.isAudioing) return //同一个用户只局限于一个
-        this.$store.dispatch('app/SET_ISTOCOARTBOARD', true)
-        this.$eventBus.$emit('web_rtc_msg', {type: WEB_RTC_MSG_TYPE.artBoard})
-      },
+      // enterArtBoard() {
+      //   if (this.isToCoArtBoard || this.isVideoing || this.isAudioing) return //同一个用户只局限于一个
+      //   //this.$store.dispatch('app/SET_ISTOCOARTBOARD', true)
+      //   this.$eventBus.$emit('web_rtc_msg', {type: WEB_RTC_MSG_TYPE.artBoard})
+      // },
       videoCall() {
         if (this.isToCoArtBoard || this.isVideoing || this.isAudioing) return
         this.$store.dispatch('app/SET_IS_VIDEOING', true)

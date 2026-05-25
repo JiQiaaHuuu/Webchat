@@ -17,7 +17,9 @@
       </a>
     </div> -->
     <div class="operation">
-      <oper-menu @setShowTheme="setShowTheme"/>
+      <oper-menu />
+      <!-- 删除主题 -->
+      <!-- <oper-menu @setShowTheme="setShowTheme"/> -->
     </div>
   </div>
 </template>
@@ -26,11 +28,12 @@
   import operMenu from './operMenu'
 
   export default {
-    props: {
-      setShowTheme: {
-        type: Function
-      }
-    },
+    // 删除主题
+    // props: {
+    //   setShowTheme: {
+    //     type: Function
+    //   }
+    // },
     data() {
       return {
         IMG_URL: process.env.IMG_URL

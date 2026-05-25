@@ -69,7 +69,8 @@
         </div>
       </div>
     </el-header>
-    <transition name="fade">
+    <!-- 删除白板 -->
+    <!-- <transition name="fade">
       <vue-draggable-resizable
         v-if="isToCoArtBoard"
         drag-cancel=".drawingarea">
@@ -78,8 +79,8 @@
                         :web-rtc-type="WEB_RTC_MSG_TYPE.artBoard"/>
         </div>
       </vue-draggable-resizable>
-    </transition>
-    <transition name="fade">
+    </transition> -->
+    <!-- <transition name="fade">
       <vue-draggable-resizable
         v-if="isVideoing || isAudioing"
         :x="0"
@@ -92,7 +93,7 @@
             :web-rtc-type="coVideoWebRtcType"/>
         </div>
       </vue-draggable-resizable>
-    </transition>
+    </transition> -->
   </div>
 </template>
 
@@ -131,7 +132,7 @@
         return this.unreadNews[key]
       },
       ...mapState('app', {
-        isToCoArtBoard: 'isToCoArtBoard',
+        //isToCoArtBoard: 'isToCoArtBoard',
         isVideoing: 'isVideoing',
         isAudioing: 'isAudioing',
         currentConversation: 'currentConversation'
@@ -159,7 +160,7 @@
               confirmButtonText: '确定',
               type: 'warning',
               callback: action => {
-                this.$store.dispatch('app/SET_ISTOCOARTBOARD', false)
+                //this.$store.dispatch('app/SET_ISTOCOARTBOARD', false)
                 this.$store.dispatch('app/SET_IS_AUDIOING', false)
                 this.$store.dispatch('app/SET_IS_VIDEOING', false)
               }
@@ -169,7 +170,7 @@
       }
     },
     components: {
-      CoArtBoard,
+      //CoArtBoard,
       CoVideo,
       vueDraggableResizable
     },
@@ -183,9 +184,10 @@
           return
         } else {
           let text = ''
-          if (webRtcType === WEB_RTC_MSG_TYPE.artBoard) {
-            text = '白板协作'
-          } else if (webRtcType === WEB_RTC_MSG_TYPE.audio) {
+          //if (webRtcType === WEB_RTC_MSG_TYPE.artBoard) {
+          //  text = '白板协作'
+          //} else
+          if (webRtcType === WEB_RTC_MSG_TYPE.audio) {
             text = '语音通话'
           } else if (webRtcType === WEB_RTC_MSG_TYPE.video) {
             text = '视频通话'
@@ -198,9 +200,10 @@
             console.log('ok')
             this.webRTCState = 'reply'
             this.$store.dispatch('app/SET_CURRENT_CONVERSATION', data)
-            if (webRtcType === WEB_RTC_MSG_TYPE.artBoard) {
-              this.$store.dispatch('app/SET_ISTOCOARTBOARD', true)
-            } else if (webRtcType === WEB_RTC_MSG_TYPE.audio) {
+            //if (webRtcType === WEB_RTC_MSG_TYPE.artBoard) {
+              //this.$store.dispatch('app/SET_ISTOCOARTBOARD', true)
+            //} else 
+            if (webRtcType === WEB_RTC_MSG_TYPE.audio) {
               this.$store.dispatch('app/SET_IS_AUDIOING', true)
             } else if (webRtcType === WEB_RTC_MSG_TYPE.video) {
               this.$store.dispatch('app/SET_IS_VIDEOING', true)
@@ -219,13 +222,13 @@
         switch (data.type) {
           case coArtBoardReplyTypes.disagree:
             this.$message.error('对方拒绝了你的请求，发个消息试试吧')
-            this.$store.dispatch('app/SET_ISTOCOARTBOARD', false)
+            //this.$store.dispatch('app/SET_ISTOCOARTBOARD', false)
             this.$store.dispatch('app/SET_IS_AUDIOING', false)
             this.$store.dispatch('app/SET_IS_VIDEOING', false)
             break;
           case coArtBoardReplyTypes.busy:
             this.$message.error('对方忙线中请稍后重试...')
-            this.$store.dispatch('app/SET_ISTOCOARTBOARD', false)
+            //this.$store.dispatch('app/SET_ISTOCOARTBOARD', false)
             this.$store.dispatch('app/SET_IS_AUDIOING', false)
             this.$store.dispatch('app/SET_IS_VIDEOING', false)
             break;
