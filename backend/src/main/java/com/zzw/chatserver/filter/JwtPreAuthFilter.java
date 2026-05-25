@@ -21,8 +21,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-//BasicAuthenticationFilter继承于OncePerRequestFilter => 确保在一次请求只通过一次filter，而不需要重复执行。
-//认证之后进行授权过滤
+// 解析Token，实现自动鉴权入口
+// BasicAuthenticationFilter继承于OncePerRequestFilter => 确保在一次请求只通过一次filter，而不需要重复执行。
+// 认证之后进行授权过滤
 public class JwtPreAuthFilter extends BasicAuthenticationFilter {
     private static Logger logger = LoggerFactory.getLogger(JwtPreAuthFilter.class);
 
