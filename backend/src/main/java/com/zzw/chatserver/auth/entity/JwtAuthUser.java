@@ -1,5 +1,6 @@
 package com.zzw.chatserver.auth.entity;
 
+import com.zzw.chatserver.common.ConstValueEnum;
 import com.zzw.chatserver.pojo.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -35,9 +36,12 @@ public class JwtAuthUser extends User implements UserDetails {
 
     @Override
     public boolean isAccountNonLocked() {
-        return true;
-        //这里不能写成这样，因为判定账号是否锁定需要特定的逻辑放在认证成功的地方进行处理
-        //return !super.getStatus().equals(ConstValueEnum.ACCOUNT_FREEZED);
+        // 【F模块安全修复】动态判断账号是否被冻结
+        // 如果 status 等于 FREEZED，则返回 false，Spring Security 会自动抛出 LockedException
+        if (super.getStatus() == null) {
+            return true; // 如果状态为空，默认放行或视为正常
+        }
+        return !super.getStatus().equals(ConstValueEnum.ACCOUNT_FREEZED.getCode());
     }
 
     @Override
