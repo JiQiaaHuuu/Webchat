@@ -1,6 +1,7 @@
 @import './var.scss';
 @import './avatar.scss';
 @import './button.scss';
+@import './layout.scss';
 
 :root {
   --avatar-radius: #{$avatar-radius};
@@ -31,4 +32,10 @@
   --color-sidebar-bg: #{$sidebar-bg};
   --color-sidebar-text: #{$sidebar-text};
   --color-sidebar-text-muted: #{$sidebar-text-muted};
+
+  --layout-shell-bg: #{$layout-shell-bg};
+  --layout-panel-border: #{$layout-panel-border};
+  --layout-header-height: #{$layout-header-height};
+  --chat-panel-bg: #{$chat-panel-bg};
+  --chat-hover-bg: #{$chat-hover-bg};
 }

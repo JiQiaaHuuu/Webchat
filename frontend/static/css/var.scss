@@ -36,6 +36,19 @@ $sidebar-text-muted: #cbd5e1;
 $sidebar-avatar-border: rgba(255, 255, 255, 0.15);
 $sidebar-hover-bg: rgba($primarycolor-rgb, 0.15);
 
+// 布局（侧边栏 + 会话列表 + 聊天区）
+$layout-shell-bg: $normalbg;
+$layout-shell-radius: 8px;
+$layout-panel-border: $border2;
+$layout-header-height: 60px;
+$layout-sidebar-width: 70px;
+$chat-panel-bg: $primarybg;
+$chat-subpanel-bg: $seatbg;
+$chat-hover-bg: rgba($primarycolor-rgb, 0.08);
+$chat-icon-btn-size: 44px;
+$chat-icon-btn-size-sm: 36px;
+$chat-icon-btn-radius: 12px;
+
 // 头像（圆角方形，全局统一）
 $avatar-radius: 14px;
 $avatar-border-width: 2px;

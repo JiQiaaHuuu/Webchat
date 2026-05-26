@@ -3,7 +3,7 @@
     <transition name="fade-left">
       <div
         v-show="device === 'Desktop' || (device === 'Mobile' && currentUI === 'conversation')"
-        :class="device === 'Mobile' ? 'conversation-list mobile' : 'conversation-list'">
+        :class="device === 'Mobile' ? 'conversation-list app-conversation-panel mobile' : 'conversation-list app-conversation-panel'">
         <conversation-list
           :currentConversation="currentConversation"
           :set-current-conversation="setCurrentConversation"
@@ -14,7 +14,7 @@
     <transition name="fade-right">
       <div v-show="device === 'Desktop' || (device === 'Mobile' && currentUI === 'chatArea')"
            v-loading="loading"
-           :class="device === 'Mobile' ? 'conversation-chat-area mobile' : 'conversation-chat-area'">
+           :class="device === 'Mobile' ? 'conversation-chat-area app-chat-shell mobile' : 'conversation-chat-area app-chat-shell'">
         <chat-area
           v-if="currentConversation && currentConversation.id"
           :currentConversation="currentConversation"
@@ -128,22 +128,21 @@
 </script>
 
 <style lang="scss">
+  @import './../../static/css/var.scss';
   @import './../../static/css/animation.scss';
 
   .index-page {
     display: flex;
     width: 100%;
-    // height: calc(100vh - 60px);
     height: 100%;
 
     .conversation-list {
       width: 30%;
-      border-right: 1px solid #cccccc;
-      background-color: var(--primary-bgcolor-4);
 
       &.mobile {
         position: absolute;
         width: 100%;
+        z-index: 1000;
       }
     }
 
@@ -152,12 +151,12 @@
       width: 70%;
 
       &.mobile {
-        // position: absolute;
         width: 100%;
       }
 
       .no-conversation {
         text-align: center;
+        color: $secondaryfont;
       }
     }
   }

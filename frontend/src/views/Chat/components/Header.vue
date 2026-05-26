@@ -1,18 +1,18 @@
 <template>
-  <div class="chat-area__header">
+  <div class="chat-area__header app-chat-header">
     <transition name="roll">
       <div class="header-wrapper" v-if="currentConversation.roomId">
-        <div class="header-title">
+        <div class="header-title app-chat-header__title">
           <i
             v-if="device === 'Mobile'"
-            class="el-icon-arrow-left back-icon"
+            class="el-icon-arrow-left back-icon app-chat-icon-btn"
             @click="setCurrentUI"
           ></i>
 
           <span>{{ headerTitle }}</span>
         </div>
 
-        <div class="header-operation">
+        <div class="header-operation app-chat-header__actions">
           <!-- 私聊操作 -->
           <span v-if="!currentConversation.isGroup">
 
@@ -27,7 +27,7 @@
             >
               <i
                 v-if="device !== 'Mobile'"
-                class="operation-item iconfont icon-huaban"
+                class="operation-item app-chat-icon-btn iconfont icon-huaban"
                 @click="enterArtBoard"
               ></i>
             </el-tooltip>
@@ -41,7 +41,7 @@
               placement="top"
             >
               <i
-                class="operation-item iconfont icon-shipin"
+                class="operation-item app-chat-icon-btn iconfont icon-shipin"
                 @click="videoCall"
               ></i>
             </el-tooltip>
@@ -53,14 +53,14 @@
               placement="top"
             >
               <i
-                class="operation-item el-icon-phone-outline"
+                class="operation-item app-chat-icon-btn el-icon-phone-outline"
                 @click="audioCall"
               ></i>
             </el-tooltip>
           </span>
 
           <i
-            class="operation-item el-icon-menu"
+            class="operation-item app-chat-icon-btn el-icon-menu"
             title="设置"
             @click.stop="toggleShowSettingPanel"
           ></i>
@@ -70,7 +70,7 @@
 
     <transition name="roll">
       <div
-        class="setting-panel"
+        class="setting-panel app-chat-dropdown-panel"
         v-if="showSettingPanel"
         @click.stop
       >
@@ -224,13 +224,6 @@ export default {
 @import './../../../../static/css/var.scss';
 
 .chat-area__header {
-  position: relative;
-  box-sizing: border-box;
-  height: 60px;
-  padding: 0 20px;
-  border-bottom: 1px solid $border3;
-  background: $primarybg;
-
   .header-wrapper {
     height: 100%;
     display: flex;
@@ -238,47 +231,8 @@ export default {
     justify-content: space-between;
   }
 
-  .header-title {
-    display: flex;
-    align-items: center;
-    font-size: 16px;
-    font-weight: 600;
-    color: $primaryfont;
-
-    span {
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-    }
-
-    .back-icon {
-      margin-right: 12px;
-      font-size: 20px;
-      cursor: pointer;
-      color: $normalfont;
-      transition: all .2s ease;
-
-      &:hover {
-        color: $primarycolor;
-      }
-    }
-  }
-
-  .header-operation {
-    display: flex;
-    align-items: center;
-
-    .operation-item {
-      margin-left: 14px;
-      font-size: 20px;
-      color: $normalfont;
-      cursor: pointer;
-      transition: all .2s ease;
-
-      &:hover {
-        color: $primarycolor;
-      }
-    }
+  .header-title .back-icon {
+    margin-right: 12px;
   }
 
   .setting-panel {
@@ -288,11 +242,7 @@ export default {
     width: 320px;
     max-width: 90vw;
     height: 461px;
-    background: $primarybg;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
-    border-radius: 8px;
     z-index: 1005;
-    overflow: hidden;
   }
 
   .iconfont::before {
@@ -323,12 +273,6 @@ export default {
       font-size: 15px;
     }
 
-    .header-operation {
-      .operation-item {
-        margin-left: 10px;
-        font-size: 18px;
-      }
-    }
 
     .setting-panel {
       width: 280px;

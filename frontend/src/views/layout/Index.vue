@@ -15,7 +15,7 @@
             'background-image': 'url(' + bgImgUrl + ')'
           }"/>
         <el-main
-          :class="device === 'Mobile' ? 'co-messager-main mobile' : 'co-messager-main'"
+          :class="device === 'Mobile' ? 'co-messager-main app-layout-shell mobile' : 'co-messager-main app-layout-shell'"
           v-css=" opacity !== 1 ? {'opacity': opacity} : {}">
           <audio :src="NotifyAudio" ref="audio" muted></audio>
           <transition name="slide-left">
@@ -361,7 +361,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: #e9ebee;
+    background-color: $layout-shell-bg;
     position: relative;
     transition: all .4s ease-out;
 
@@ -403,9 +403,9 @@
         margin: -336px 0 0 -510px;
         width: 1020px;
         height: 672px;
-        background-color: #e9ebee;
-        color: #333;
-        border-radius: 5px;
+        background-color: $layout-shell-bg;
+        color: $primaryfont;
+        border-radius: $layout-shell-radius;
         padding: 0;
         opacity: .8;
         /*针对移动端做特殊处理*/
@@ -421,7 +421,7 @@
         .co-messager-aside {
           width: 7%;
           height: 100%;
-          border-right: 1px solid #cccccc;
+          border-right: 1px solid $layout-panel-border;
 
           &.mobile {
             position: absolute;
@@ -461,7 +461,7 @@
       z-index: 1003;
       left: -1px;
       top: 50px;
-      background-color: #fff;
+      background-color: $chat-panel-bg;
       padding: 3px;
       opacity: 0.6;
       border-top-right-radius: 5px;

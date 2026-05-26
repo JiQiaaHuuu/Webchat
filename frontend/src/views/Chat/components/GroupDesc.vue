@@ -1,5 +1,5 @@
 <template>
-  <div class="group-desc-com">
+  <div class="group-desc-com app-chat-subpanel">
     <div class="notice">
       <span>
         富强、民主、文明、和谐、自由、平等、公正、法治，倡导爱国、敬业、诚信、友善
@@ -46,18 +46,25 @@
 </script>
 
 <style lang="scss">
-  .group-desc-com {
-    height: 100%;
-    width: 100%;
-    border-left: 1px solid #cccccc;
+@import './../../../../static/css/var.scss';
 
-    .notice {
-      height: 50%;
-      border-bottom: 1px solid #cccccc;
-    }
+.group-desc-com {
+  height: 100%;
+  width: 100%;
 
-    .member {
-      height: 50%;
-    }
+  .notice {
+    height: 50%;
+    padding: 12px 16px;
+    color: $normalfont;
+    font-size: 13px;
+    line-height: 1.6;
+    border-bottom: 1px solid $layout-panel-border;
+    background: $chat-subpanel-bg;
   }
+
+  .member {
+    height: 50%;
+    background: $chat-panel-bg;
+  }
+}
 </style>

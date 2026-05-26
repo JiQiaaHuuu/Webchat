@@ -27,8 +27,11 @@
 </script>
 
 <style lang="scss">
+@import './../../static/css/var.scss';
+
   .chat-view-page {
     height: 100%;
+    background: $chat-panel-bg;
   }
 </style>
 

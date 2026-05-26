@@ -3,7 +3,7 @@
     <el-dropdown placement="left">
       <span class="el-dropdown-link">
         <el-badge is-dot :value="validateUnReadCount" :hidden="!validateUnReadCount">
-          <i class="oper-item el-icon-s-operation"></i>
+          <i class="oper-item app-sidebar-icon-btn el-icon-s-operation"></i>
         </el-badge>
       </span>
       <el-dropdown-menu slot="dropdown">

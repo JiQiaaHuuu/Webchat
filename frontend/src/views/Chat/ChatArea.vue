@@ -1,5 +1,5 @@
 <template>
-  <div class="chat-area__com">
+  <div class="chat-area__com app-chat-shell">
     <chat-header
       :currentConversation="currentConversation"
       :set-current-conversation="setCurrentConversation"
@@ -8,7 +8,7 @@
     <!-- 历史记录 -->
     <transition name="slide-up">
       <div
-        class="history-msg-container"
+        class="history-msg-container app-chat-floating-panel"
         v-if="showHistoryMsg"
       >
         <history-msg
@@ -43,7 +43,7 @@
 
       <!-- 群信息 -->
       <div
-        class="group-desc"
+        class="group-desc app-chat-subpanel"
         v-if="
           device !== 'Mobile' &&
           currentConversation.conversationType === 'GROUP'
@@ -57,13 +57,13 @@
     </div>
 
     <!-- 编辑区 -->
-    <div class="message-edit-container">
+    <div class="message-edit-container app-chat-footer">
       <div class="tool">
 
         <!-- emoji -->
         <span class="tool-item">
           <i
-            class="item iconfont icon-emoji"
+            class="item app-chat-icon-btn iconfont icon-emoji"
             @click.stop="
               showEmojiCom = !showEmojiCom
             "
@@ -73,7 +73,7 @@
         <!-- 图片 -->
         <span class="tool-item">
           <label for="upImg">
-            <i class="item el-icon-picture">
+            <i class="item app-chat-icon-btn el-icon-picture">
               <input
                 id="upImg"
                 class="img-inp"
@@ -89,7 +89,7 @@
         <!-- 文件 -->
         <span class="tool-item">
           <i
-            class="item el-icon-folder"
+            class="item app-chat-icon-btn el-icon-folder"
             @click.stop="
               showUpFileCom =
                 !showUpFileCom
@@ -145,7 +145,7 @@
 
         <!-- 历史记录 -->
         <span
-          class="tool-item history-btn"
+          class="tool-item app-chat-link-btn history-btn"
           :class="
             showHistoryMsg
               ? 'el-icon-caret-bottom'
@@ -180,7 +180,7 @@
       <!-- 输入框 -->
       <textarea
         ref="chatInp"
-        class="textarea"
+        class="textarea app-chat-textarea"
         v-model="messageText"
         maxlength="200"
         @input="scrollBottom = true"
@@ -281,13 +281,6 @@ export default {
 <style lang="scss">
 @import './../../../static/css/var.scss';
 
-.chat-area__com {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background: $primarybg;
-}
-
 .main {
   flex: 1;
   display: flex;
@@ -307,15 +300,6 @@ export default {
 
 .group-desc {
   width: 280px;
-  border-left: 1px solid $border3;
-  background: $primarybg;
-}
-
-.message-edit-container {
-  position: relative;
-  padding: 12px 16px;
-  border-top: 1px solid $border3;
-  background: $primarybg;
 }
 
 .tool {
@@ -331,47 +315,14 @@ export default {
   cursor: pointer;
 }
 
-.item {
-  font-size: 20px;
-  color: $normalfont;
-  transition: .2s;
-}
-
-.item:hover {
-  color: $primarycolor;
-}
-
 .history-btn {
   margin-left: auto;
-  font-size: 14px;
-  color: $normalfont;
-  cursor: pointer;
-}
-
-.history-btn:hover {
-  color: $primarycolor;
 }
 
 .operation {
   display: flex;
   justify-content: flex-end;
   margin-bottom: 10px;
-}
-
-.textarea {
-  width: 100%;
-  min-height: 110px;
-  resize: none;
-  padding: 10px 12px;
-  border: 1px solid $border1;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.textarea:focus {
-  border-color: $primarycolor;
 }
 
 .img-inp {
@@ -395,11 +346,9 @@ export default {
 .history-msg-container {
   position: absolute;
   right: 0;
-  top: 60px;
+  top: $layout-header-height;
   width: 360px;
-  height: calc(100% - 60px);
-  background: $primarybg;
-  border-left: 1px solid $border3;
+  height: calc(100% - #{$layout-header-height});
   z-index: 1001;
 }
 
