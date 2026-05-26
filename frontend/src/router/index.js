@@ -76,6 +76,15 @@ const router = new Router({
         //     requiresAuth: true
         //   },
         // },
+        // 白板入口（已关闭，保留便于恢复）
+        // {
+        //   path: 'whiteboard',
+        //   name: 'Whiteboard',
+        //   component: () => import('@/views/CoArtBoard'),
+        //   meta: {
+        //     requiresAuth: true
+        //   },
+        // },
       ]
     },
     {

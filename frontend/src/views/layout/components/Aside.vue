@@ -15,6 +15,13 @@
       <router-link to="/chat/add" tag="span" title="加好友">
         <span class="app-sidebar-icon-btn iconfont icon-icon-"></span>
       </router-link>
+
+      <!-- 白板入口（已关闭，保留便于恢复） -->
+      <!--
+      <router-link to="/whiteboard" tag="span" title="白板">
+        <span class="app-sidebar-icon-btn iconfont icon-huaban"></span>
+      </router-link>
+      -->
     </div>
 
     <div class="app-sidebar__footer operation">

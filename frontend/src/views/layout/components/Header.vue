@@ -79,7 +79,7 @@
       </div>
     </el-header>
 
-    <!-- F：按文档要求移除白板功能 -->
+    <!-- 白板协作浮层入口（已关闭，保留便于恢复） -->
     <!--
     <transition name="fade">
       <vue-draggable-resizable
@@ -248,6 +248,14 @@ export default {
         text = '语音通话'
       } else if (webRtcType === WEB_RTC_MSG_TYPE.video) {
         text = '视频通话'
+      }
+      // 白板入口（已关闭）
+      // } else if (webRtcType === WEB_RTC_MSG_TYPE.artBoard) {
+      //   text = '白板协作'
+      //   this.$store.dispatch('app/SET_ISTOCOARTBOARD', true)
+
+      if (!text) {
+        return
       }
 
       this.$confirm(

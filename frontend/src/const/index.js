@@ -60,25 +60,26 @@ export const uploadStatusMap = {
   complete: 'complete'
 }
 
-// 在CoArtBoard组件中对调色板的操作
-export const coArtBoardHandleOption = [
-  {name: "圆", type: "arc"},
-  {name: "线条", type: "line"},
-  {name: "矩形", type: "rect"},
-  {name: "多边形", type: "polygon"},
-  {name: "橡皮擦", type: "eraser"},
-  {name: "撤回", type: "cancel"},
-  {name: "前进", type: "go"},
-  {name: "清屏", type: "clear"},
-  {name: "线宽", type: "lineWidth"},
-  {name: "颜色", type: "color"}
-]
-
-export const coArtBoardReplyTypes = {
-  agree: 'agree',
-  disagree: 'disagree',
-  busy: 'busy',
-}
+// 白板相关常量（入口已关闭，保留便于恢复）
+// 在 CoArtBoard 组件中对调色板的操作
+// export const coArtBoardHandleOption = [
+//   {name: "圆", type: "arc"},
+//   {name: "线条", type: "line"},
+//   {name: "矩形", type: "rect"},
+//   {name: "多边形", type: "polygon"},
+//   {name: "橡皮擦", type: "eraser"},
+//   {name: "撤回", type: "cancel"},
+//   {name: "前进", type: "go"},
+//   {name: "清屏", type: "clear"},
+//   {name: "线宽", type: "lineWidth"},
+//   {name: "颜色", type: "color"}
+// ]
+//
+// export const coArtBoardReplyTypes = {
+//   agree: 'agree',
+//   disagree: 'disagree',
+//   busy: 'busy',
+// }
 
 export const weatherMap = {
   "阴": 'icon-tianqi',
@@ -98,6 +99,7 @@ export const weekNumZHMap = {
 }
 
 export const WEB_RTC_MSG_TYPE = {
+  // artBoard: 'artBoard', // 白板入口已关闭；历史消息展示仍依赖该类型时可保留下一行
   artBoard: 'artBoard',
   video: 'video',
   audio: 'audio'

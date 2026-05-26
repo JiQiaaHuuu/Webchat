@@ -16,8 +16,7 @@
           <!-- 私聊操作 -->
           <span v-if="!currentConversation.isGroup">
 
-            <!-- ========================= -->
-            <!-- 原白板功能：保留注释 -->
+            <!-- 白板协作入口（已关闭，保留便于恢复） -->
             <!--
             <el-tooltip
               class="item"
@@ -32,7 +31,6 @@
               ></i>
             </el-tooltip>
             -->
-            <!-- ========================= -->
 
             <el-tooltip
               class="item"
@@ -127,10 +125,8 @@ export default {
     },
 
     ...mapState('app', {
-      /*
-      原白板状态：保留注释
-      isToCoArtBoard: 'isToCoArtBoard',
-      */
+      // 白板状态（入口已关闭）
+      // isToCoArtBoard: 'isToCoArtBoard',
       isVideoing: 'isVideoing',
       isAudioing: 'isAudioing'
     }),
@@ -141,16 +137,13 @@ export default {
   },
 
   methods: {
-    /*
-    原白板方法：保留注释
-    enterArtBoard() {
-      if (this.isToCoArtBoard || this.isVideoing || this.isAudioing) return
-
-      this.$eventBus.$emit('web_rtc_msg', {
-        type: WEB_RTC_MSG_TYPE.artBoard
-      })
-    },
-    */
+    // 白板协作（入口已关闭）
+    // enterArtBoard() {
+    //   if (this.isToCoArtBoard || this.isVideoing || this.isAudioing) return
+    //   this.$eventBus.$emit('web_rtc_msg', {
+    //     type: WEB_RTC_MSG_TYPE.artBoard
+    //   })
+    // },
 
     videoCall() {
       if (this.isVideoing || this.isAudioing) return

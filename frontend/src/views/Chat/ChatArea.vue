@@ -120,14 +120,12 @@
           </transition>
         </span>
 
-        <!-- ======================== -->
-        <!-- 原白板按钮：保留注释 -->
+        <!-- 白板工具入口（已关闭，保留便于恢复） -->
         <!--
         <span class="tool-item">
-          <i class="item iconfont icon-huaban"/>
+          <i class="item app-chat-icon-btn iconfont icon-huaban"/>
         </span>
         -->
-        <!-- ======================== -->
 
         <!-- 原视频按钮 -->
         <!--

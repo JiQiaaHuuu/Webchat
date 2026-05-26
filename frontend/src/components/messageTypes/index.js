@@ -1,5 +1,6 @@
 import { MSG_TYPES } from '@/const'
 import messageVideo from './video'
+// 白板消息展示（非功能入口，用于历史记录渲染）
 import messageArtBoard from './artBoard'
 import messageAudio from './audio'
 import messageFile from './file'
