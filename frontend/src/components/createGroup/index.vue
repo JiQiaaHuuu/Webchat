@@ -8,8 +8,8 @@
       />
       <el-form label-position="top" :model="groupForm" :rules="rules" ref="groupForm">
         <el-form-item label="群头像（点击头像可切换）" required class="avatar-form">
-          <el-avatar
-            :size="50"
+          <app-avatar
+            size="lg"
             :src="IMG_URL + groupForm.avatar"
             @click.native="setShowChooseAvatar(true)"
           />

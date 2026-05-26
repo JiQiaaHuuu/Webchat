@@ -9,10 +9,9 @@
         :before-close="handleClose">
         <div style="height: 150px;vertical-align: center;text-align: left">
           <span class="groupInfoSpan">
-            <img
+            <app-avatar
+              size="xl"
               :src="IMG_URL + groupInfo.img"
-              alt="群头像"
-              class="groupInfoImg"
             />
           </span>
           <span class="groupInfoText">
@@ -34,10 +33,10 @@
         :before-close="handleClose">
         <div style="vertical-align: center;text-align: center">
           <span class="groupInfoSpanMobile">
-            <img
+            <app-avatar
+              size="xl"
               :src="IMG_URL + groupInfo.img"
-              alt="群头像"
-              class="groupInfoImgMobile"/>
+            />
           </span>
           <span class="groupInfoTextMobile">
             <div>群号码：{{ groupInfo.code }}</div>
@@ -103,14 +102,7 @@
 
       .groupInfoSpan {
         display: inline-block;
-        border-radius: 50%;
-        height: 130px;
-
         vertical-align: center;
-
-        .groupInfoImg {
-          height: 100%;
-        }
       }
 
       .groupInfoText {
@@ -129,18 +121,9 @@
       width: 100%;
 
       .groupInfoSpanMobile {
-        width: 100px;
-        height: 100px;
         display: block;
-        border-radius: 50%;
-        vertical-align: center;
         margin: auto;
-
-
-        .groupInfoImgMobile {
-          margin: 0 auto;
-          height: 100%;
-        }
+        text-align: center;
       }
 
       .groupInfoTextMobile {

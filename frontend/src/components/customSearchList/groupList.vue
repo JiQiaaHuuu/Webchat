@@ -2,11 +2,11 @@
   <div class="custom-search-list-com">
     <div class="wrapper" v-for="item in searchList" :key="item.gid">
       <div class="details">
-        <el-avatar
+        <app-avatar
           class="avatar"
-          shape="square"
-          :src="IMG_URL + item.img">
-        </el-avatar>
+          size="lg"
+          :src="IMG_URL + item.img"
+        />
         <div class="info">
           <p class="item primary-font nickname">
             <span @click="lookGroupInfo(item)">
@@ -151,11 +151,6 @@
       .details {
         display: flex;
         align-items: center;
-
-        .avatar {
-          width: 100px;
-          height: 100px;
-        }
 
         .info {
           margin-left: 27px;

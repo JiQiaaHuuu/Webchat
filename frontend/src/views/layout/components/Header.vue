@@ -26,16 +26,11 @@
         <el-dropdown class="droplist">
           <span class="el-dropdown-link">
             <el-badge :is-dot="validateUnReadCount > 0" class="badge-item">
-              <el-avatar
-                size="large"
+              <app-avatar
                 class="avatar"
+                size="md"
                 :src="IMG_URL + userInfo.photo"
-                @error="() => true">
-
-                <img
-                  src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-                  alt="">
-              </el-avatar>
+              />
             </el-badge>
           </span>
 

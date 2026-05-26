@@ -221,13 +221,15 @@ export default {
 </script>
 
 <style lang="scss">
+@import './../../../../static/css/var.scss';
+
 .chat-area__header {
   position: relative;
   box-sizing: border-box;
   height: 60px;
   padding: 0 20px;
-  border-bottom: 1px solid #ebeef5;
-  background: #fff;
+  border-bottom: 1px solid $border3;
+  background: $primarybg;
 
   .header-wrapper {
     height: 100%;
@@ -241,7 +243,7 @@ export default {
     align-items: center;
     font-size: 16px;
     font-weight: 600;
-    color: #303133;
+    color: $primaryfont;
 
     span {
       overflow: hidden;
@@ -253,11 +255,11 @@ export default {
       margin-right: 12px;
       font-size: 20px;
       cursor: pointer;
-      color: #606266;
+      color: $normalfont;
       transition: all .2s ease;
 
       &:hover {
-        color: #409eff;
+        color: $primarycolor;
       }
     }
   }
@@ -269,12 +271,12 @@ export default {
     .operation-item {
       margin-left: 14px;
       font-size: 20px;
-      color: #606266;
+      color: $normalfont;
       cursor: pointer;
       transition: all .2s ease;
 
       &:hover {
-        color: #409eff;
+        color: $primarycolor;
       }
     }
   }
@@ -286,7 +288,7 @@ export default {
     width: 320px;
     max-width: 90vw;
     height: 461px;
-    background: #fff;
+    background: $primarybg;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
     border-radius: 8px;
     z-index: 1005;

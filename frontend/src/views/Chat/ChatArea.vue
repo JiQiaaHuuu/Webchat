@@ -280,11 +280,13 @@ export default {
 </script>
 
 <style lang="scss">
+@import './../../../static/css/var.scss';
+
 .chat-area__com {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #fff;
+  background: $primarybg;
 }
 
 .main {
@@ -306,15 +308,15 @@ export default {
 
 .group-desc {
   width: 280px;
-  border-left: 1px solid #ebeef5;
-  background: #fff;
+  border-left: 1px solid $border3;
+  background: $primarybg;
 }
 
 .message-edit-container {
   position: relative;
   padding: 12px 16px;
-  border-top: 1px solid #ebeef5;
-  background: #fff;
+  border-top: 1px solid $border3;
+  background: $primarybg;
 }
 
 .tool {
@@ -332,23 +334,23 @@ export default {
 
 .item {
   font-size: 20px;
-  color: #606266;
+  color: $normalfont;
   transition: .2s;
 }
 
 .item:hover {
-  color: #409eff;
+  color: $primarycolor;
 }
 
 .history-btn {
   margin-left: auto;
   font-size: 14px;
-  color: #606266;
+  color: $normalfont;
   cursor: pointer;
 }
 
 .history-btn:hover {
-  color: #409eff;
+  color: $primarycolor;
 }
 
 .operation {
@@ -362,7 +364,7 @@ export default {
   min-height: 110px;
   resize: none;
   padding: 10px 12px;
-  border: 1px solid #dcdfe6;
+  border: 1px solid $border1;
   border-radius: 8px;
   outline: none;
   font-size: 14px;
@@ -370,7 +372,7 @@ export default {
 }
 
 .textarea:focus {
-  border-color: #409eff;
+  border-color: $primarycolor;
 }
 
 .img-inp {
@@ -397,8 +399,8 @@ export default {
   top: 60px;
   width: 360px;
   height: calc(100% - 60px);
-  background: #fff;
-  border-left: 1px solid #ebeef5;
+  background: $primarybg;
+  border-left: 1px solid $border3;
   z-index: 1001;
 }
 

@@ -8,7 +8,7 @@
         v-for="(item, index) in avatarList"
         :key="index"
         @click="choose('face/'+item)">
-        <img width="80" height="80" :src="IMG_URL + 'face/' + item" alt="" srcset="">
+        <img width="80" height="80" :src="IMG_URL + 'face/' + item" alt="">
       </div>
     </div>
   </div>
@@ -64,8 +64,9 @@
         box-sizing: border-box;
         display: inline-block;
         margin: 5px;
-        border: 1px solid #DCDFE6;
         cursor: pointer;
+        overflow: hidden;
+        border-radius: var(--avatar-radius, 14px);
       }
     }
   }

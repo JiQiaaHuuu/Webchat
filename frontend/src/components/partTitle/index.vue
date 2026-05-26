@@ -6,12 +6,14 @@
 </template>
 
 <script>
+  import { THEME_PRIMARY } from '@/const'
+
   export default {
     props: {
       bgc: {
         type: String,
         default() {
-          return '#1890ff'
+          return THEME_PRIMARY
         }
       },
       text: {

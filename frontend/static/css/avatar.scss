@@ -1,0 +1,36 @@
+@import './var.scss';
+
+.app-avatar.el-avatar {
+  border-radius: $avatar-radius;
+  border: $avatar-border-width solid $avatar-border-color;
+  box-shadow: $avatar-shadow;
+  background-color: $primarybg;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.app-avatar--sidebar.el-avatar {
+  border-color: $sidebar-avatar-border;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: scale(1.04);
+    border-color: $primarycolor;
+  }
+}
+
+.avatar-choose-cmp .avatar-item img {
+  border-radius: $avatar-radius;
+  border: 1px solid $border1;
+  object-fit: cover;
+}
+
+.offline.app-avatar.el-avatar {
+  opacity: 0.5;
+}

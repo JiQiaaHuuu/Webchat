@@ -68,6 +68,7 @@
 </script>
 
 <style lang="scss">
+@import './../../../static/css/var.scss';
   .color-pick-cmp {
     width: 290px;
     padding: 10px;
@@ -89,11 +90,11 @@
         }
 
         &.is-select {
-          box-shadow: 0 0 3px 2px #409eff;
+          box-shadow: 0 0 3px 2px $primarycolor;
         }
 
         &:hover {
-          box-shadow: 0 0 3px 2px #409eff;
+          box-shadow: 0 0 3px 2px $primarycolor;
         }
       }
 

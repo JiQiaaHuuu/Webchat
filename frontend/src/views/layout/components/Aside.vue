@@ -2,11 +2,11 @@
   <div class="layout-cmp__aside">
     <div class="avatar">
       <router-link to="/">
-        <el-avatar
-          shape="square"
-          :size="50"
+        <app-avatar
+          variant="sidebar"
+          size="lg"
           :src="IMG_URL + userInfo.photo"
-        ></el-avatar>
+        />
       </router-link>
       <span class="nickname">{{ userInfo.nickname }}</span>
     </div>
@@ -73,6 +73,7 @@ export default {
 </script>
 
 <style lang="scss">
+@import './../../../../static/css/var.scss';
 @import './../../../../static/iconfont/iconfont.css';
 
 .layout-cmp__aside {
@@ -84,27 +85,13 @@ export default {
   height: 100%;
   padding: 16px 0;
 
-  /* 统一侧边栏主题色 */
-  background: #0f172a;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  background: $sidebar-bg;
+  border-right: 1px solid $sidebar-border;
 
   .avatar {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
-    /* 统一头像样式 */
-    ::v-deep .el-avatar {
-      border-radius: 14px;
-      border: 2px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      transition: all 0.25s ease;
-    }
-
-    ::v-deep .el-avatar:hover {
-      transform: scale(1.04);
-      border-color: #3b82f6;
-    }
 
     .nickname {
       display: inline-block;
@@ -113,7 +100,7 @@ export default {
       text-align: center;
       font-size: 13px;
       font-weight: 500;
-      color: #e2e8f0;
+      color: $sidebar-text;
       cursor: pointer;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -133,7 +120,7 @@ export default {
       border-radius: 12px;
 
       /* 按钮统一 */
-      color: #cbd5e1;
+      color: $sidebar-text-muted;
       background: transparent;
       font-size: 20px;
       text-align: center;
@@ -142,8 +129,8 @@ export default {
     }
 
     .nav-item:hover {
-      background: rgba(59, 130, 246, 0.15);
-      color: #3b82f6;
+      background: $sidebar-hover-bg;
+      color: $primarycolor;
       transform: translateY(-2px);
     }
   }
@@ -162,14 +149,14 @@ export default {
       line-height: 44px;
       text-align: center;
       border-radius: 12px;
-      color: #cbd5e1;
+      color: $sidebar-text-muted;
       font-size: 22px;
       transition: all 0.25s ease;
     }
 
     .oper-item:hover {
-      background: rgba(59, 130, 246, 0.15);
-      color: #3b82f6;
+      background: $sidebar-hover-bg;
+      color: $primarycolor;
     }
   }
 }

@@ -2,11 +2,11 @@
   <div class="custom-search-list-com">
     <div class="wrapper" v-for="item in searchList" :key="item.uid">
       <div class="details">
-        <el-avatar
+        <app-avatar
           class="avatar"
-          shape="square"
-          :src="IMG_URL + item.photo">
-        </el-avatar>
+          size="lg"
+          :src="IMG_URL + item.photo"
+        />
         <div class="info">
           <p class="item primary-font nickname">
             <!--            <router-link :to="`/user/${item.uid}`" tag="span">-->
@@ -149,11 +149,6 @@
       .details {
         display: flex;
         align-items: center;
-
-        .avatar {
-          width: 100px;
-          height: 100px;
-        }
 
         .info {
           margin-left: 27px;

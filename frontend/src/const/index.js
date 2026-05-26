@@ -1,3 +1,20 @@
+/** 与 static/css/var.scss 中 $primarycolor 保持一致 */
+export const THEME_PRIMARY = '#409EFF'
+
+/** 默认头像占位图 */
+export const AVATAR_FALLBACK =
+  'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'
+
+/** 与 static/css/var.scss 中 $avatar-size-* 保持一致 */
+export const AVATAR_SIZE = {
+  xs: 20,
+  sm: 32,
+  md: 40,
+  lg: 50,
+  ml: 60,
+  xl: 100
+}
+
 export const conversationTypes = {
   friend: 'FRIEND',
   group: 'GROUP'

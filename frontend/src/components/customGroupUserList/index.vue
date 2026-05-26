@@ -5,13 +5,11 @@
     </header>
     <div class="user-list">
       <div class="user-item" v-for="item in outcomeUserList" :key="item.id">
-        <el-avatar
+        <app-avatar
           :class="(onlineUser || []).includes(item.userInfo.uid) ? '' : 'offline'"
-          :size="20"
+          size="xs"
           :src="IMG_URL + item.userInfo.photo"
-          @error="() => true">
-          <img src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png">
-        </el-avatar>
+        />
         <div class="user-detail">
           <span class="normal-font detail-item ellipsis">
             {{item.userInfo.beiZhu ? item.userInfo.beiZhu : item.userInfo.nickname}}

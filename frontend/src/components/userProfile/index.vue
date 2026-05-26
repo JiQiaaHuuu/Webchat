@@ -9,10 +9,9 @@
         :before-close="handleClose">
         <div style="height: 150px;vertical-align: center;text-align: left">
           <span class="userInfoSpan">
-            <img
+            <app-avatar
+              size="xl"
               :src="IMG_URL + friendInfo.photo"
-              alt="用户头像"
-              class="userInfoImg"
             />
           </span>
           <span class="userInfoText">
@@ -37,10 +36,9 @@
         :before-close="handleClose">
         <div style="vertical-align: center;text-align: center">
           <span class="userInfoSpanMobile">
-            <img
+            <app-avatar
+              size="xl"
               :src="IMG_URL + friendInfo.photo"
-              alt="用户头像"
-              class="userInfoImgMobile"
             />
           </span>
           <span class="userInfoTextMobile">
@@ -99,14 +97,7 @@
 
       .userInfoSpan {
         display: inline-block;
-        border-radius: 50%;
-        height: 130px;
-
         vertical-align: center;
-
-        .userInfoImg {
-          height: 100%;
-        }
       }
 
       .userInfoText {
@@ -125,17 +116,9 @@
       width: 100%;
 
       .userInfoSpanMobile {
-        width: 100px;
-        height: 100px;
         display: block;
-        border-radius: 50%;
-        vertical-align: center;
         margin: auto;
-
-        .userInfoImgMobile {
-          margin: 0 auto;
-          height: 100%;
-        }
+        text-align: center;
       }
 
       .userInfoTextMobile {

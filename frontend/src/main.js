@@ -9,16 +9,17 @@ import 'normalize.css/normalize.css'
 import App from './App'
 import router from './router'
 import Toast from './components/toast/main.js'
+import AppAvatar from './components/appAvatar'
 import axios from './api'
 import store from './store'
 import directives from './directives'
 import './../static/css/base.scss'
-import './../static/css/var.scss'
 import './../static/css/theme.scss'
 
 let fullCalendar = require('./libs/fullCalendar/fullCalendar');
 
 Vue.use(ElementUI)
+Vue.component('AppAvatar', AppAvatar)
 Vue.component('full-calendar', fullCalendar.VueFullcalendar)
 
 // socket连接

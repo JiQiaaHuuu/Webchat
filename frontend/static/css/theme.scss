@@ -1,0 +1,30 @@
+@import './var.scss';
+@import './avatar.scss';
+
+:root {
+  --avatar-radius: #{$avatar-radius};
+  --avatar-size-xs: #{$avatar-size-xs};
+  --avatar-size-sm: #{$avatar-size-sm};
+  --avatar-size-md: #{$avatar-size-md};
+  --avatar-size-lg: #{$avatar-size-lg};
+  --avatar-size-ml: #{$avatar-size-ml};
+  --avatar-size-xl: #{$avatar-size-xl};
+
+  --color-primary: #{$primarycolor};
+  --color-primary-dark: #{$primarycolor-1};
+  --color-primary-rgb: #{$primarycolor-rgb};
+
+  --color-text-primary: #{$primaryfont};
+  --color-text-regular: #{$normalfont};
+  --color-text-secondary: #{$secondaryfont};
+  --color-text-placeholder: #{$seatfont};
+
+  --color-bg: #{$primarybg};
+  --color-bg-page: #{$normalbg};
+  --color-border: #{$border3};
+  --color-border-base: #{$border1};
+
+  --color-sidebar-bg: #{$sidebar-bg};
+  --color-sidebar-text: #{$sidebar-text};
+  --color-sidebar-text-muted: #{$sidebar-text-muted};
+}

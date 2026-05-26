@@ -63,9 +63,10 @@
             trigger="click">
             <div class="validate-popover-body" v-loading="isAdding">
               <div class="sender-info">
-                <el-avatar :size="60" :src="IMG_URL + item.senderAvatar" @error="()=>true">
-                  <img src="https://cube.elemecdn.com/e/fd/0fc7d20532fdaf769a25683617711png.png"/>
-                </el-avatar>
+                <app-avatar
+                  size="ml"
+                  :src="IMG_URL + item.senderAvatar"
+                />
                 <div class="info">
                   <span class="nickname">{{item.senderNickname}}</span>
                 </div>
@@ -191,6 +192,7 @@
 </script>
 
 <style lang="scss">
+@import './../../../static/css/var.scss';
   .validate-popover-body {
     .sender-info {
       display: flex;
@@ -203,7 +205,7 @@
 
         .nickname {
           font-size: 20px;
-          color: #3578E5;
+          color: $primarycolor;
         }
       }
     }
@@ -223,7 +225,7 @@
   }
 
   .validatenews-com {
-    background-color: #fff;
+    background-color: $primarybg;
     width: 100%;
     height: 95%;
     overflow-x: hidden;
@@ -251,10 +253,10 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-top: 1px solid #C0C4CC;
+        border-top: 1px solid $seatfont;
 
         &:last-child {
-          border-bottom: 1px solid #C0C4CC;
+          border-bottom: 1px solid $seatfont;
         }
 
         .apply-info {

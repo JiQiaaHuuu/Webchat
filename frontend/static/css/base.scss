@@ -94,7 +94,7 @@ input {
   text-decoration: none;
   color: $color-grey8;
   &:hover {
-    color: $color-blue;
+    color: $primarycolor;
   }
 }
 
@@ -138,7 +138,7 @@ input {
 }
 
 .bottom-line {
-  border-bottom: 1px solid #E4E7ED;
+  border-bottom: 1px solid $border2;
 }
 
 // 背景颜色
