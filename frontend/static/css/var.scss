@@ -48,6 +48,17 @@ $avatar-size-lg: 50px;
 $avatar-size-ml: 60px;
 $avatar-size-xl: 100px;
 
+// 按钮（与 Element UI 配合，全局统一）
+$btn-radius: 8px;
+$btn-radius-round: 20px;
+$btn-font-weight: 500;
+$btn-height-sm: 32px;
+$btn-height-md: 36px;
+$btn-height-lg: 40px;
+$btn-padding-sm: 8px 16px;
+$btn-padding-md: 10px 20px;
+$btn-padding-lg: 12px 24px;
+
 // 通用阴影
 .basics-box-shadow {
   box-shadow: 0 2px 12px rgba(0, 0, 0, .08);

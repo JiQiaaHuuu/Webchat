@@ -34,7 +34,7 @@
           <span style="width: 200px" v-show="cvCodeIng" @click="getCVCode">获取中...</span>
         </el-form-item>
         <el-form-item>
-          <el-button class="login-btn" type="primary" @click="login">登录</el-button>
+          <app-button class="login-btn" variant="primary" block @click="login">登录</app-button>
           <span>没有账号？<span class="operation-text" style="display: inline" @click="changeState(false)">注册</span></span>
         </el-form-item>
       </el-form>
@@ -69,7 +69,7 @@
           <canvas width="120" height="40" ref="registerCanvas" @click="getCVCode"></canvas>
         </el-form-item>
         <el-form-item class="oper">
-          <el-button class="login-btn" type="primary" @click="register">注册</el-button>
+          <app-button class="login-btn" variant="primary" block @click="register">注册</app-button>
           <span>已有账号？<span class="operation-text" style="display: inline" @click="changeState(true)">登录</span></span>
         </el-form-item>
       </el-form>
@@ -261,6 +261,10 @@
 
           .app-avatar {
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+          }
+
+          .login-btn {
+            margin-top: 4px;
           }
         }
       }

@@ -1,0 +1,122 @@
+@import './var.scss';
+
+// Element UI 按钮全局覆写
+.el-button {
+  border-radius: $btn-radius;
+  font-weight: $btn-font-weight;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &.is-round {
+    border-radius: $btn-radius-round;
+  }
+}
+
+.el-button--mini {
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.el-button--small {
+  padding: $btn-padding-sm;
+  font-size: 13px;
+}
+
+.el-button--medium {
+  padding: $btn-padding-md;
+}
+
+.el-button--primary {
+  background-color: $primarycolor;
+  border-color: $primarycolor;
+
+  &:hover,
+  &:focus {
+    background-color: $primarycolor-1;
+    border-color: $primarycolor-1;
+  }
+
+  &.is-plain {
+    color: $primarycolor;
+    background-color: rgba($primarycolor-rgb, 0.08);
+    border-color: rgba($primarycolor-rgb, 0.35);
+
+    &:hover,
+    &:focus {
+      color: $normalwhite;
+      background-color: $primarycolor;
+      border-color: $primarycolor;
+    }
+  }
+}
+
+.el-button--success {
+  &.is-plain {
+    &:hover,
+    &:focus {
+      color: $normalwhite;
+    }
+  }
+}
+
+.el-button--danger {
+  &.is-plain {
+    &:hover,
+    &:focus {
+      color: $normalwhite;
+    }
+  }
+}
+
+.el-button--text {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+// 应用统一按钮类
+.app-btn {
+  &.app-btn--block {
+    display: block;
+    width: 100%;
+  }
+}
+
+.dialog-footer {
+  .el-button + .el-button {
+    margin-left: 10px;
+  }
+}
+
+.oper-menu {
+  .el-button--text {
+    width: 100%;
+    text-align: left;
+    color: $normalfont;
+
+    &:hover,
+    &:focus {
+      color: $primarycolor;
+      background-color: rgba($primarycolor-rgb, 0.08);
+    }
+  }
+}
+
+.chat-area__com .message-edit-container .operation {
+  .app-btn + .app-btn,
+  .el-button + .el-button {
+    margin-left: 8px;
+  }
+}
+
+.el-radio-button__inner {
+  border-radius: $btn-radius;
+  font-weight: $btn-font-weight;
+}
+
+.el-radio-button:first-child .el-radio-button__inner {
+  border-radius: $btn-radius 0 0 $btn-radius;
+}
+
+.el-radio-button:last-child .el-radio-button__inner {
+  border-radius: 0 $btn-radius $btn-radius 0;
+}

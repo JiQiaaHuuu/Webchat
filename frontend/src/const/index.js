@@ -15,6 +15,14 @@ export const AVATAR_SIZE = {
   xl: 100
 }
 
+/** 与 Element UI size 映射：xs→mini, sm→small, md→medium */
+export const BUTTON_SIZE = {
+  xs: 'mini',
+  sm: 'small',
+  md: 'medium',
+  lg: 'medium'
+}
+
 export const conversationTypes = {
   friend: 'FRIEND',
   group: 'GROUP'

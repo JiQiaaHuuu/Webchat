@@ -1,5 +1,6 @@
 @import './var.scss';
 @import './avatar.scss';
+@import './button.scss';
 
 :root {
   --avatar-radius: #{$avatar-radius};
@@ -9,6 +10,9 @@
   --avatar-size-lg: #{$avatar-size-lg};
   --avatar-size-ml: #{$avatar-size-ml};
   --avatar-size-xl: #{$avatar-size-xl};
+
+  --btn-radius: #{$btn-radius};
+  --btn-radius-round: #{$btn-radius-round};
 
   --color-primary: #{$primarycolor};
   --color-primary-dark: #{$primarycolor-1};

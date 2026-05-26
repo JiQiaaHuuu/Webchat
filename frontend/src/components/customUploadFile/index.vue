@@ -17,8 +17,8 @@
         :on-error="handleError"
         :before-upload="beforeUpload"
         :auto-upload="false">
-        <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
-        <el-button style="margin-left: 10px;" size="small" type="success" @click="submitUpload">传输</el-button>
+        <app-button slot="trigger" variant="primary" size="sm">选取文件</app-button>
+        <app-button variant="primary" plain size="sm" style="margin-left: 10px;" @click="submitUpload">传输</app-button>
         <div slot="tip" class="el-upload__tip">文件大小不超过1MB</div>
       </el-upload>
       <span slot="reference">

@@ -21,8 +21,8 @@
           <el-input v-model="groupForm.desc" autocomplete="on"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" size="mini" @click="submitForm('groupForm')">提交</el-button>
-          <el-button size="mini" @click="resetForm('groupForm')">重置</el-button>
+          <app-button variant="primary" size="sm" @click="submitForm('groupForm')">提交</app-button>
+          <app-button size="sm" @click="resetForm('groupForm')">重置</app-button>
         </el-form-item>
       </el-form>
     </div>

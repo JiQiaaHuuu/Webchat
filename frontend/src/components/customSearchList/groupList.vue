@@ -17,19 +17,21 @@
         </div>
       </div>
       <div class="operation">
-        <el-button
-          type="primary"
-          size="small"
+        <app-button
+          variant="primary"
+          size="sm"
           icon="el-icon-plus"
           v-if="!(groups || []).includes(item.gid)"
           @click="showAdditionDialog(item)">添加
-        </el-button>
-        <el-button
+        </app-button>
+        <app-button
           v-else-if="(groups || []).includes(item.gid)"
-          type="primary"
-          size="small"
+          variant="primary"
+          plain
+          disabled
+          size="sm"
         >已添加
-        </el-button>
+        </app-button>
         <el-dialog
           title="附加消息"
           :visible.sync="showAdditionMessage"
@@ -43,8 +45,8 @@
             </el-input>
           </div>
           <span slot="footer" class="dialog-footer">
-            <el-button @click="showAdditionMessage = false">取 消</el-button>
-            <el-button type="primary" @click="sendApply()">确 定</el-button>
+            <app-button size="sm" @click="showAdditionMessage = false">取 消</app-button>
+            <app-button variant="primary" size="sm" @click="sendApply()">确 定</app-button>
           </span>
         </el-dialog>
       </div>

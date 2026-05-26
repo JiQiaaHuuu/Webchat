@@ -78,8 +78,8 @@
                 </div>
               </div>
               <div class="operation" v-if="item.status === 0">
-                <el-button type="success" plain size="small" @click="agreeValidate(item)">同意</el-button>
-                <el-button type="danger" plain size="small" @click="disagreeValidate(item)">拒绝</el-button>
+                <app-button variant="success" plain size="sm" @click="agreeValidate(item)">同意</app-button>
+                <app-button variant="danger" plain size="sm" @click="disagreeValidate(item)">拒绝</app-button>
               </div>
               <div class="operation" v-else-if="item.status === 1">
                 <el-tag type="success">已同意</el-tag>
@@ -88,7 +88,7 @@
                 <el-tag type="danger">已拒绝</el-tag>
               </div>
             </div>
-            <el-button slot="reference" type="success">查看</el-button>
+            <app-button slot="reference" variant="primary" size="sm">查看</app-button>
           </el-popover>
         </div>
       </div>
@@ -221,6 +221,10 @@
 
     .operation {
       text-align: right;
+
+      .app-btn + .app-btn {
+        margin-left: 8px;
+      }
     }
   }
 

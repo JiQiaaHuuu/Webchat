@@ -9,8 +9,8 @@
         <el-input v-model="beiZhu"/>
       </div>
       <div class="footer">
-        <el-button @click="ok" size="mini" type="success">确认</el-button>
-        <el-button @click="close" size="mini" type="danger">取消</el-button>
+        <app-button variant="primary" size="sm" @click="ok">确认</app-button>
+        <app-button size="sm" @click="close">取消</app-button>
       </div>
     </div>
   </div>

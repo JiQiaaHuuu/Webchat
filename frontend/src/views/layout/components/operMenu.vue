@@ -9,7 +9,7 @@
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item>
           <router-link to="/chat/setting" class="aside-menu-link">
-            <el-button type="text">个人设置</el-button>
+            <app-button variant="text">个人设置</app-button>
           </router-link>
         </el-dropdown-item>
         <el-dropdown-item>
@@ -17,7 +17,7 @@
             :value="validateUnReadCount"
             :hidden="!validateUnReadCount">
             <router-link to="/chat/system" class="aside-menu-link">
-              <el-button type="text">系统消息</el-button>
+              <app-button variant="text">系统消息</app-button>
             </router-link>
           </el-badge>
         </el-dropdown-item>
@@ -26,13 +26,13 @@
           <el-button type="text" @click="setShowTheme(true)">主题设置</el-button>
         </el-dropdown-item> -->
         <el-dropdown-item>
-          <el-button type="text" @click="showFeedBackDialog">反馈</el-button>
+          <app-button variant="text" @click="showFeedBackDialog">反馈</app-button>
           <!--          <router-link to="/chat/feedback" class="aside-menu-link">-->
           <!--            <el-button type="text">反馈</el-button>-->
           <!--          </router-link>-->
         </el-dropdown-item>
         <el-dropdown-item>
-          <el-button type="text" @click="logout">退出登录</el-button>
+          <app-button variant="text" @click="logout">退出登录</app-button>
         </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
@@ -49,8 +49,8 @@
         </el-input>
       </div>
       <span slot="footer" class="dialog-footer">
-      <el-button @click="showFeedBack = false">取 消</el-button>
-      <el-button type="primary" @click="feedBack">确 定</el-button>
+      <app-button size="sm" @click="showFeedBack = false">取 消</app-button>
+      <app-button variant="primary" size="sm" @click="feedBack">确 定</app-button>
     </span>
     </el-dialog>
   </div>

@@ -10,6 +10,7 @@ import App from './App'
 import router from './router'
 import Toast from './components/toast/main.js'
 import AppAvatar from './components/appAvatar'
+import AppButton from './components/appButton'
 import axios from './api'
 import store from './store'
 import directives from './directives'
@@ -20,6 +21,7 @@ let fullCalendar = require('./libs/fullCalendar/fullCalendar');
 
 Vue.use(ElementUI)
 Vue.component('AppAvatar', AppAvatar)
+Vue.component('AppButton', AppButton)
 Vue.component('full-calendar', fullCalendar.VueFullcalendar)
 
 // socket连接

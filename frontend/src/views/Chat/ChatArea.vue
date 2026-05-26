@@ -159,23 +159,22 @@
 
       <!-- 操作 -->
       <div class="operation">
-        <el-button
+        <app-button
+          variant="primary"
+          size="sm"
           @click="send"
-          type="success"
-          size="small"
-          round
         >
           发送
-        </el-button>
+        </app-button>
 
-        <el-button
+        <app-button
+          variant="danger"
+          plain
+          size="sm"
           @click="clean"
-          type="danger"
-          size="small"
-          round
         >
           清空
-        </el-button>
+        </app-button>
       </div>
 
       <!-- 输入框 -->
