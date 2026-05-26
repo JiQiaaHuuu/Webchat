@@ -3,7 +3,7 @@
     <transition name="fade-left">
       <div
         v-show="device === 'Desktop' || (device === 'Mobile' && currentUI === 'conversation')"
-        :class="device === 'Mobile' ? 'conversation-list app-conversation-panel mobile' : 'conversation-list app-conversation-panel'">
+        :class="device === 'Mobile' ? 'conversation-list mobile' : 'conversation-list'">
         <conversation-list
           :currentConversation="currentConversation"
           :set-current-conversation="setCurrentConversation"
@@ -14,13 +14,16 @@
     <transition name="fade-right">
       <div v-show="device === 'Desktop' || (device === 'Mobile' && currentUI === 'chatArea')"
            v-loading="loading"
-           :class="device === 'Mobile' ? 'conversation-chat-area app-chat-shell mobile' : 'conversation-chat-area app-chat-shell'">
+           :class="device === 'Mobile' ? 'conversation-chat-area mobile' : 'conversation-chat-area'">
         <chat-area
           v-if="currentConversation && currentConversation.id"
           :currentConversation="currentConversation"
           :setLoading="setLoading"
           :set-current-conversation="setCurrentConversation"/>
-        <home-welcome v-else />
+        <div class="no-conversation hor-ver-center" v-else>
+          <chat-svg width="400" height="300"/>
+          <p>聊天~打开心灵的窗户</p>
+        </div>
       </div>
     </transition>
   </div>
@@ -32,7 +35,7 @@
   import {SET_UNREAD_NEWS_TYPE_MAP} from '@/store/constants'
   import {saveRecentConversationToLocal} from '@/utils'
   import partTitle from '@/components/partTitle'
-  import homeWelcome from '@/components/homeWelcome'
+  import chatSvg from '@/SVGComponents/chat'
   export default {
     name: 'Home',
     data() {
@@ -119,43 +122,42 @@
       ConversationList,
       ChatArea,
       partTitle,
-      homeWelcome
+      chatSvg
     }
   }
 </script>
 
 <style lang="scss">
-  @import './../../static/css/var.scss';
   @import './../../static/css/animation.scss';
 
   .index-page {
     display: flex;
     width: 100%;
+    // height: calc(100vh - 60px);
     height: 100%;
 
     .conversation-list {
       width: 30%;
+      border-right: 1px solid #cccccc;
+      background-color: var(--primary-bgcolor-4);
 
       &.mobile {
         position: absolute;
         width: 100%;
-        z-index: 1000;
       }
     }
 
     .conversation-chat-area {
-      display: flex;
-      flex-direction: column;
       position: relative;
       width: 70%;
 
       &.mobile {
+        // position: absolute;
         width: 100%;
       }
 
-      .home-welcome {
-        flex: 1;
-        min-height: 0;
+      .no-conversation {
+        text-align: center;
       }
     }
   }

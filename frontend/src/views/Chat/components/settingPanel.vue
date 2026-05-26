@@ -1,5 +1,5 @@
 <template>
-  <div class="setting-panel-cmp app-chat-dropdown-panel">
+  <div class="setting-panel-cmp">
     <div class="operation-list">
       <span
         class="oper-item operation-text"
@@ -110,23 +110,21 @@
 </script>
 
 <style lang="scss">
-@import './../../../../static/css/var.scss';
-
-.setting-panel-cmp {
-  height: 100%;
-  border-radius: 0;
-
-  .operation-list {
+  .setting-panel-cmp {
     height: 100%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    background-color: #fff;
 
-    .oper-item {
-      line-height: 20px;
-      margin-top: 10px;
+    .operation-list {
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      .oper-item {
+        line-height: 20px;
+        margin-top: 10px;
+      }
     }
   }
-}
 </style>
 

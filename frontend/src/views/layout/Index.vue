@@ -15,7 +15,7 @@
             'background-image': 'url(' + bgImgUrl + ')'
           }"/>
         <el-main
-          :class="device === 'Mobile' ? 'co-messager-main app-layout-shell mobile' : 'co-messager-main app-layout-shell'"
+          :class="device === 'Mobile' ? 'co-messager-main mobile' : 'co-messager-main'"
           v-css=" opacity !== 1 ? {'opacity': opacity} : {}">
           <audio :src="NotifyAudio" ref="audio" muted></audio>
           <transition name="slide-left">
@@ -56,7 +56,7 @@
   import {mapState} from 'vuex'
   import myHeader from './components/Header'
   import myAside from './components/Aside'
-  import {APP_VERSION, APP_NAME} from '@/const'
+  import {APP_VERSION} from '@/const'
   import {saveRecentConversationToLocal, arrUnique} from '@/utils'
   import {SET_UNREAD_NEWS_TYPE_MAP} from '@/store/constants'
   import theme from '@/components/theme'
@@ -338,9 +338,9 @@
       }
       this.sysUserJoinSocket()
       console.log(
-        `%c ${APP_NAME} v${APP_VERSION} %c 已启动 %c`,
-        'background:#409EFF;padding:2px 8px;border-radius:4px 0 0 4px;color:#fff',
-        'background:#337ECC;padding:2px 8px;border-radius:0 4px 4px 0;color:#fff',
+        `%c ChatClient V${APP_VERSION} Started %c Contact: sharezzw@163.com %c`,
+        'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+        'background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
         'background:transparent'
       )
       this.$eventBus.$on("removeRecentGroup", (e) => {
@@ -361,7 +361,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-color: $layout-shell-bg;
+    background-color: #e9ebee;
     position: relative;
     transition: all .4s ease-out;
 
@@ -403,9 +403,9 @@
         margin: -336px 0 0 -510px;
         width: 1020px;
         height: 672px;
-        background-color: $layout-shell-bg;
-        color: $primaryfont;
-        border-radius: $layout-shell-radius;
+        background-color: #e9ebee;
+        color: #333;
+        border-radius: 5px;
         padding: 0;
         opacity: .8;
         /*针对移动端做特殊处理*/
@@ -421,7 +421,7 @@
         .co-messager-aside {
           width: 7%;
           height: 100%;
-          border-right: 1px solid $layout-panel-border;
+          border-right: 1px solid #cccccc;
 
           &.mobile {
             position: absolute;
@@ -461,7 +461,7 @@
       z-index: 1003;
       left: -1px;
       top: 50px;
-      background-color: $chat-panel-bg;
+      background-color: #fff;
       padding: 3px;
       opacity: 0.6;
       border-top-right-radius: 5px;

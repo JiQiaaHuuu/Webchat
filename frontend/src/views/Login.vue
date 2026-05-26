@@ -12,16 +12,11 @@
       />
     </transition>
     <div class="wrapper hor-ver-center" :style="device === 'Mobile' ? {width: '90%'}:{}">
-      <div class="login-brand">
-        <app-logo size="lg" class="login-brand__logo" />
-        <p class="login-brand__tagline">{{ APP_TAGLINE }}</p>
-      </div>
       <el-form class="login-form" v-if="isLoginState">
         <div class="avatar">
-          <app-avatar
-            size="xl"
-            :src="IMG_URL + loginInfo.avatar"
-          />
+          <el-avatar :size="100" :src="IMG_URL + loginInfo.avatar" @error="()=>true">
+            <img src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"/>
+          </el-avatar>
         </div>
         <el-form-item>
           <el-input autocomplete="new-password" v-model="loginInfo.username" prefix-icon="el-icon-user"
@@ -38,16 +33,16 @@
           <span style="width: 200px" v-show="cvCodeIng" @click="getCVCode">获取中...</span>
         </el-form-item>
         <el-form-item>
-          <app-button class="login-btn" variant="primary" block @click="login">登录</app-button>
+          <el-button class="login-btn" type="primary" @click="login">登录</el-button>
           <span>没有账号？<span class="operation-text" style="display: inline" @click="changeState(false)">注册</span></span>
         </el-form-item>
       </el-form>
       <el-form class="register-form" v-if="!isLoginState">
         <div class="avatar" @click="setShowChooseAvatar(true)">
-          <app-avatar
-            size="xl"
-            :src="avatar"
-          />
+          <img :src="avatar" alt="" srcset="" width="100" height="100" style="border-radius: 50%">
+          <!-- <el-avatar :size="100" :src="avatar">
+            <img src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
+          </el-avatar> -->
           <span class="secondary-font" style="display: inline-block; margin-bottom: 5px">
             点击头像切换头像
           </span>
@@ -73,7 +68,7 @@
           <canvas width="120" height="40" ref="registerCanvas" @click="getCVCode"></canvas>
         </el-form-item>
         <el-form-item class="oper">
-          <app-button class="login-btn" variant="primary" block @click="register">注册</app-button>
+          <el-button class="login-btn" type="primary" @click="register">注册</el-button>
           <span>已有账号？<span class="operation-text" style="display: inline" @click="changeState(true)">登录</span></span>
         </el-form-item>
       </el-form>
@@ -90,8 +85,6 @@
   import {usernameReg, passwordReg} from '@/utils/index'
   import avatarChoose from '@/components/avatarChoose'
   import copyRight from '@/components/copyright'
-  import AppLogo from '@/components/appLogo'
-  import { APP_TAGLINE } from '@/const'
 
   const faceRandom = Math.ceil(Math.random() * 10)
   export default {
@@ -116,8 +109,7 @@
         isLoginState: true,
         bgUrl: ocean1,
         showChooseAvatar: false,
-        IMG_URL: process.env.IMG_URL,
-        APP_TAGLINE
+        IMG_URL: process.env.IMG_URL
       }
     },
     computed: {
@@ -222,8 +214,7 @@
     },
     components: {
       avatarChoose,
-      copyRight,
-      AppLogo
+      copyRight
     },
     async mounted() {
       this.getCVCode()
@@ -253,26 +244,9 @@
     .wrapper {
       background-color: #fff;
       width: 400px;
-      opacity: .95;
-      padding: 28px 20px 0;
-      border-radius: 12px;
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
-
-      .login-brand {
-        text-align: center;
-        margin-bottom: 8px;
-
-        &__logo {
-          justify-content: center;
-          color: $primaryfont;
-        }
-
-        &__tagline {
-          margin: 8px 0 20px;
-          font-size: 14px;
-          color: $secondaryfont;
-        }
-      }
+      opacity: .9;
+      padding: 35px 20px 0;
+      border-radius: 5px;
 
       .login-form, .register-form {
         position: relative;
@@ -284,12 +258,8 @@
           text-align: center;
           margin-bottom: 10px;
 
-          .app-avatar {
+          .el-avatar {
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-          }
-
-          .login-btn {
-            margin-top: 4px;
           }
         }
       }

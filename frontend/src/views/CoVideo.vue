@@ -6,7 +6,7 @@
     <div class="video-container" v-show="isToPeer && webRtcType === 'video'">
       <div>
         <video src id="rtcA" controls autoplay></video>
-        <app-button variant="danger" size="md" @click="hangup">挂断</app-button>
+        <el-button type="danger" @click="hangup">挂断</el-button>
       </div>
       <div>
         <video src id="rtcB" controls autoplay></video>

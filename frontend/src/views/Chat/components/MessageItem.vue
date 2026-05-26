@@ -2,12 +2,14 @@
   <div
     class="chat-area__message-item__com"
     :style="messageItemComStyle">
-    <app-avatar
+    <el-avatar
       v-if="messageitem.messageType !== MSG_TYPES.sys"
       class="avatar"
-      size="md"
+      size="large"
       :src="messageitem.senderId === userInfo.uid ? IMG_URL + userInfo.photo : IMG_URL + messageitem.senderAvatar"
-    />
+      @error="() => true">
+      <img src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" alt srcset>
+    </el-avatar>
     <div
       :class="device === 'Mobile' ? 'message-info mobile' : 'message-info'"
       :style="messageitem.messageType === MSG_TYPES.sys ? 'width: 100%' : ''">
@@ -147,7 +149,6 @@
 </script>
 
 <style lang="scss">
-@import './../../../../static/css/var.scss';
   @import url('./../../../../static/iconfont/iconfont.css');
 
   .chat-area__message-item__com {
@@ -195,7 +196,7 @@
         top: 50%;
         transform: translateY(-50%);
         margin-right: 7px;
-        color: $primarycolor;
+        color: #409EFF;
         font-size: 12px;
         cursor: pointer;
       }
