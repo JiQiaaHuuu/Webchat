@@ -56,7 +56,7 @@
   import {mapState} from 'vuex'
   import myHeader from './components/Header'
   import myAside from './components/Aside'
-  import {APP_VERSION} from '@/const'
+  import {APP_VERSION, APP_NAME} from '@/const'
   import {saveRecentConversationToLocal, arrUnique} from '@/utils'
   import {SET_UNREAD_NEWS_TYPE_MAP} from '@/store/constants'
   import theme from '@/components/theme'
@@ -338,9 +338,9 @@
       }
       this.sysUserJoinSocket()
       console.log(
-        `%c ChatClient V${APP_VERSION} Started %c Contact: sharezzw@163.com %c`,
-        'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
-        'background:#41b883 ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+        `%c ${APP_NAME} v${APP_VERSION} %c 已启动 %c`,
+        'background:#409EFF;padding:2px 8px;border-radius:4px 0 0 4px;color:#fff',
+        'background:#337ECC;padding:2px 8px;border-radius:0 4px 4px 0;color:#fff',
         'background:transparent'
       )
       this.$eventBus.$on("removeRecentGroup", (e) => {

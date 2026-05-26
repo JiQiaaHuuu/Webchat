@@ -12,6 +12,10 @@
       />
     </transition>
     <div class="wrapper hor-ver-center" :style="device === 'Mobile' ? {width: '90%'}:{}">
+      <div class="login-brand">
+        <app-logo size="lg" class="login-brand__logo" />
+        <p class="login-brand__tagline">{{ APP_TAGLINE }}</p>
+      </div>
       <el-form class="login-form" v-if="isLoginState">
         <div class="avatar">
           <app-avatar
@@ -86,6 +90,8 @@
   import {usernameReg, passwordReg} from '@/utils/index'
   import avatarChoose from '@/components/avatarChoose'
   import copyRight from '@/components/copyright'
+  import AppLogo from '@/components/appLogo'
+  import { APP_TAGLINE } from '@/const'
 
   const faceRandom = Math.ceil(Math.random() * 10)
   export default {
@@ -110,7 +116,8 @@
         isLoginState: true,
         bgUrl: ocean1,
         showChooseAvatar: false,
-        IMG_URL: process.env.IMG_URL
+        IMG_URL: process.env.IMG_URL,
+        APP_TAGLINE
       }
     },
     computed: {
@@ -215,7 +222,8 @@
     },
     components: {
       avatarChoose,
-      copyRight
+      copyRight,
+      AppLogo
     },
     async mounted() {
       this.getCVCode()
@@ -245,9 +253,26 @@
     .wrapper {
       background-color: #fff;
       width: 400px;
-      opacity: .9;
-      padding: 35px 20px 0;
-      border-radius: 5px;
+      opacity: .95;
+      padding: 28px 20px 0;
+      border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+      .login-brand {
+        text-align: center;
+        margin-bottom: 8px;
+
+        &__logo {
+          justify-content: center;
+          color: $primaryfont;
+        }
+
+        &__tagline {
+          margin: 8px 0 20px;
+          font-size: 14px;
+          color: $secondaryfont;
+        }
+      }
 
       .login-form, .register-form {
         position: relative;

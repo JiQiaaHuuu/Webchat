@@ -2,9 +2,8 @@
   <div class="layout-header__com">
     <el-header>
       <div class="logo">
-        <router-link to="/" class="logo-link">
-          Co-Messager
-          <span class="logo-img"></span>
+        <router-link to="/chat/home" class="logo-link">
+          <app-logo size="sm" />
         </router-link>
       </div>
 
@@ -128,6 +127,7 @@ import CoVideo from '@/views/CoVideo'
 
 import { WEB_RTC_MSG_TYPE } from '@/const'
 import { removeCookie } from '@/utils/token'
+import AppLogo from '@/components/appLogo'
 
 const WEB_RTC_MSG_TYPE_TEXT = {
   video: '视频通话',
@@ -229,6 +229,7 @@ export default {
     /* F：删除白板组件注册 */
     // CoArtBoard,
 
+    AppLogo,
     CoVideo,
     vueDraggableResizable
   },
@@ -294,3 +295,122 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+@import './../../../../static/css/var.scss';
+@import './../../../../static/css/animation.scss';
+
+.user-menu-item {
+  .link {
+    color: $primarycolor;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.layout-header__com {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1003;
+  transform: translateY(-200px);
+
+  .el-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, $primarycolor 0%, $primarycolor-1 100%);
+    color: $normalwhite;
+    line-height: 60px;
+    box-shadow: 0 2px 12px rgba($primarycolor-rgb, 0.35);
+  }
+
+  .logo {
+    cursor: pointer;
+
+    .logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $normalwhite;
+    }
+  }
+
+  .operation {
+    display: flex;
+    align-items: center;
+
+    .item {
+      height: 40px;
+      line-height: 40px;
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 0 10px;
+      font-size: 14px;
+      transition: background 0.2s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      a,
+      span {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .user-info {
+    display: flex;
+    align-items: center;
+
+    .droplist {
+      height: 60px;
+
+      .el-badge__content.is-fixed {
+        top: 17px;
+      }
+
+      .avatar {
+        margin-top: 10px;
+      }
+    }
+
+    .name-sigin {
+      display: flex;
+      flex-direction: column;
+      line-height: 20px;
+      margin-left: 10px;
+      max-width: 160px;
+
+      .name {
+        font-size: 16px;
+        font-weight: 600;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .sigin {
+        font-size: 12px;
+        opacity: 0.85;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .co-art-board {
+    position: absolute;
+    z-index: 1007;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: $primarybg;
+  }
+}
+</style>

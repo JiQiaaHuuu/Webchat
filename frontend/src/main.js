@@ -14,6 +14,9 @@ import AppButton from './components/appButton'
 import axios from './api'
 import store from './store'
 import directives from './directives'
+import { APP_NAME } from './const'
+
+document.title = APP_NAME
 import './../static/css/base.scss'
 import './../static/css/theme.scss'
 

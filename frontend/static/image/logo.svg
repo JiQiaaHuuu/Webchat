@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Webchat">
+  <defs>
+    <linearGradient id="wc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#66b1ff"/>
+      <stop offset="100%" stop-color="#409EFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="12" fill="url(#wc-grad)"/>
+  <path d="M12 14h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-10l-5 4v-4h-1a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z" fill="#fff" fill-opacity="0.95"/>
+  <circle cx="17" cy="20" r="1.5" fill="#409EFF"/>
+  <circle cx="22" cy="20" r="1.5" fill="#409EFF"/>
+  <circle cx="27" cy="20" r="1.5" fill="#409EFF"/>
+</svg>

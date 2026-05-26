@@ -30,6 +30,11 @@ export const conversationTypes = {
 
 export const APP_VERSION = '1.0.0'
 
+/** 产品品牌（logo、顶栏、登录页、首页空状态统一引用） */
+export const APP_NAME = 'Webchat'
+export const APP_TAGLINE = '即时沟通，连接你我'
+export const APP_HOME_HINT = '从左侧选择好友或群聊，开始对话'
+
 // 在添加好友或者群聊时对应的搜索条件
 export const searchObjectMap = [
   {id: 1, label: '人', value: 'friend'},
